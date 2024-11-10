@@ -32,8 +32,7 @@ function saveTranslation() {
     favorites.push({ word, translation });
     updateFavorites();
     document.getElementById("saveButton").disabled = true;
-    listItem.innerText = `${item.word} - ${item.translation}`;
-
+    alert(`Сохранено: ${word} - ${translation}`);
 }
 
 // Функция для обновления списка избранных переводов
@@ -48,7 +47,8 @@ function updateFavorites() {
     } else {
         favorites.forEach((item, index) => {
             const listItem = document.createElement("li");
-            alert(`Сохранено: ${word} - ${translation}`);
+            listItem.innerText = `${item.word} - ${item.translation}`;
+
 
             // Кнопка для удаления перевода из избранного
             const removeButton = document.createElement("button");
